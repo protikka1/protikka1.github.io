@@ -2,68 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Abu Islam | Google Workspace & DNS Specialist</title>
-  <!-- Link to External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="app-wrapper">
     <header>
-      <span class="badge">Verified Deliverability</span>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Available for Deployments
+      </div>
       <h1>Abu Islam</h1>
-      <p class="subtitle">Google Workspace Administrator & Email Deliverability Specialist</p>
-      <p>I build, migrate, and secure business email infrastructure on Google Workspace. My focus is eliminating spam placement, enforcing cryptographic DNS authentication (SPF, 2048-bit DKIM, DMARC), and ensuring 100% primary inbox delivery.</p>
-      <div class="contact-links">
-        <a href="mailto:support@eporth.org">support@eporth.org</a>
-        <a href="https://github.com/protikka1" target="_blank">github.com/protikka1</a>
-        <a href="https://eporth.org" target="_blank">eporth.org</a>
-        <span>Los Angeles, CA</span>
+      <p class="role">Google Workspace & Email Deliverability Specialist</p>
+      <p class="bio-summary">Eliminating spam placement and building zero-downtime Google Workspace environments via strict DNS authentication (SPF, 2048-bit DKIM, DMARC).</p>
+      <div class="quick-links">
+        <a href="mailto:support@eporth.org">✉️ support@eporth.org</a>
+        <a href="https://github.com/protikka1" target="_blank">💻 GitHub</a>
+        <a href="https://eporth.org" target="_blank">🌐 eporth.org</a>
       </div>
     </header>
 
-    <h2>Live DNS Deliverability Simulator</h2>
-    <div class="card">
-      <p>Test domain authentication compliance against Google & Yahoo sender requirements:</p>
-      <div class="terminal-box">
-        <div class="terminal-input-bar">
-          <input type="text" id="domain-input" placeholder="eporth.org" value="eporth.org">
-          <button id="run-audit-btn">Run Audit</button>
-        </div>
-        <pre id="audit-output">Click "Run Audit" to simulate live nameserver check...</pre>
+    <!-- Visual Authority Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-val">100%</span>
+        <span class="metric-label">Inbox Placement</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-val">2048-bit</span>
+        <span class="metric-label">DKIM Encryption</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-val">4 / 4</span>
+        <span class="metric-label">Audit Pass Rate</span>
       </div>
     </div>
 
-    <h2>Client Case Studies</h2>
-    <div class="card">
-      <h3>Case 1: Resolving E-Commerce Spam Placement & Conflicting SPF</h3>
-      <p><strong>Challenge:</strong> Client transactional receipts were routed to spam due to multiple conflicting SPF strings on Squarespace DNS breaking Google's 10-lookup threshold.</p>
-      <p><strong>Solution:</strong> Consolidated SPF records into a single optimized syntax, published a 2048-bit <code>google._domainkey</code> DKIM selector, and enforced a phased DMARC policy.</p>
-      <p><strong>Outcome:</strong> 100% primary inbox delivery restored with zero bounce rate.</p>
+    <!-- Segmented Tab Bar -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="tab-simulator">Live Audit</button>
+      <button class="tab-btn" data-tab="tab-cases">Case Studies</button>
+      <button class="tab-btn" data-tab="tab-tiers">Services & Tiers</button>
     </div>
 
-    <div class="card">
-      <h3>Case 2: Secondary Domain Outreach Isolation</h3>
-      <p><strong>Challenge:</strong> An agency required secondary outbound sending domains to scale outreach without endangering the primary domain's reputation.</p>
-      <p><strong>Solution:</strong> Set up domain routing inside Google Workspace, deployed isolated SPF/DKIM records across Cloudflare DNS, and configured SSL-secured Custom Tracking Domains (CNAME).</p>
-      <p><strong>Outcome:</strong> Achieved 4/4 passing audit scores while keeping the primary corporate domain completely isolated.</p>
+    <!-- Tab 1: Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+      <div class="terminal-card">
+        <div class="terminal-title">
+          <span>Root Nameserver Diagnostic</span>
+          <span style="color: var(--success); font-weight: normal;">● Ready</span>
+        </div>
+        <div class="search-bar">
+          <input type="text" id="domain-input" placeholder="eporth.org" value="eporth.org">
+          <button id="run-audit-btn">Audit</button>
+        </div>
+        <pre id="audit-output" class="terminal-screen">Type a domain and tap "Audit" to verify authentication compliance...</pre>
+      </div>
     </div>
 
-    <h2>Technical Competencies</h2>
-    <table>
-      <thead>
-        <tr><th>Layer</th><th>Supported Services</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Authentication</strong></td><td>SPF Optimization, 2048-bit DKIM, DMARC (<code>p=quarantine</code> / <code>p=reject</code>)</td></tr>
-        <tr><td><strong>Google Workspace</strong></td><td>Admin Console, MX Routing, Domain Aliases, Dual Delivery</td></tr>
-        <tr><td><strong>DNS Providers</strong></td><td>Squarespace, Cloudflare, Google Domains, AWS Route 53, GoDaddy</td></tr>
-        <tr><td><strong>Tooling & Code</strong></td><td>Python (<code>dnspython</code>), Shell / Termux, JavaScript, Git</td></tr>
-      </tbody>
-    </table>
+    <!-- Tab 2: Case Studies -->
+    <div id="tab-cases" class="tab-content">
+      <div class="case-card">
+        <span class="case-tag">E-Commerce Deliverability</span>
+        <h3>Resolving Conflicting SPF & Broken DKIM</h3>
+        <p><strong>Challenge:</strong> Multiple conflicting SPF strings on Squarespace triggered hard syntax failures at Gmail and Yahoo.</p>
+        <p><strong>Fix:</strong> Consolidated SPF syntax, provisioned 2048-bit <code>google._domainkey</code> DKIM, and deployed staged DMARC reporting.</p>
+        <p style="color: var(--success); font-weight: 600;">Outcome: 100% primary delivery restored.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-tag">Outreach Scaling</span>
+        <h3>Secondary Domain Reputation Isolation</h3>
+        <p><strong>Challenge:</strong> Scaling high-volume cold outreach without risking core business domain authority.</p>
+        <p><strong>Fix:</strong> Configured dedicated routing on Cloudflare, generated isolated DKIM selectors, and deployed Custom Tracking Domains.</p>
+        <p style="color: var(--success); font-weight: 600;">Outcome: 4/4 passing audit with zero primary domain exposure.</p>
+      </div>
+    </div>
+
+    <!-- Tab 3: Services & Tiers -->
+    <div id="tab-tiers" class="tab-content">
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr><th>Tier</th><th>Deliverables</th><th>Rate</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Starter</strong></td>
+              <td>Single domain audit, consolidated SPF, DKIM verification, basic DMARC.</td>
+              <td>$65</td>
+            </tr>
+            <tr>
+              <td><strong>Growth</strong></td>
+              <td>Full Google Workspace onboarding, 2048-bit DKIM, aligned DMARC, 1 CTD.</td>
+              <td>$135</td>
+            </tr>
+            <tr>
+              <td><strong>Enterprise</strong></td>
+              <td>Up to 5 domains, multi-inbox routing, strict DMARC, full cold-email isolation.</td>
+              <td>$275</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
-  <!-- Link to External JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>
