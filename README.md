@@ -1,6 +1,6 @@
 # protikka1.github.io
 
-Source repository for the official portfolio and engineering showcase of **Abu Islam** (Google Workspace Administrator & Email Deliverability Specialist).
+Source repository for the official portfolio and engineering showcase of **Abul Islam** (Google Workspace Administrator & Email Deliverability Specialist).
 
 Live URL: [https://protikka1.github.io](https://protikka1.github.io)
 
